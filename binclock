@@ -20,40 +20,40 @@ def generate_time_grid():
 #   create 6x4 grid for representing the binary clock
 def create_clock(canvas, root):
     #   hour segments
-    h00 = canvas.create_rectangle(10,10,60,60, outline="white", tag="h00")
-    h01 = canvas.create_rectangle(10,70,60,120, outline="white", tag="h01")
-    h02 = canvas.create_rectangle(10,130,60,180, outline="white", tag="h02")
-    h03 = canvas.create_rectangle(10,190,60,240, outline="white", tag="h03")
-    h10 = canvas.create_rectangle(70,10,120,60, outline="white", tag="h10")
-    h11 = canvas.create_rectangle(70,70,120,120, outline="white", tag="h11")
-    h12 = canvas.create_rectangle(70,130,120,180, outline="white", tag="h12")
-    h13 = canvas.create_rectangle(70,190,120,240, outline="white", tag="h13")
+    h00 = canvas.create_rectangle(10,10,70,70, outline="black", width=5, tag="h00")
+    h01 = canvas.create_rectangle(10,80,70,140, outline="black", width=5, tag="h01")
+    h02 = canvas.create_rectangle(10,150,70,210, outline="black", width=5, tag="h02")
+    h03 = canvas.create_rectangle(10,220,70,280, outline="black", width=5, tag="h03")
+    h10 = canvas.create_rectangle(80,10,140,70, outline="black", width=5, tag="h10")
+    h11 = canvas.create_rectangle(80,80,140,140, outline="black", width=5, tag="h11")
+    h12 = canvas.create_rectangle(80,150,140,210, outline="black", width=5, tag="h12")
+    h13 = canvas.create_rectangle(80,220,140,280, outline="black", width=5, tag="h13")
 
     #   minute segments
-    m00 = canvas.create_rectangle(140,10,190,60, outline="white", tag="m00")
-    m01 = canvas.create_rectangle(140,70,190,120, outline="white", tag="m01")
-    m02 = canvas.create_rectangle(140,130,190,180, outline="white", tag="m02")
-    m03 = canvas.create_rectangle(140,190,190,240, outline="white", tag="m03")
-    m10 = canvas.create_rectangle(200,10,250,60, outline="white", tag="m10")
-    m11 = canvas.create_rectangle(200,70,250,120, outline="white", tag="m11")
-    m12 = canvas.create_rectangle(200,130,250,180, outline="white", tag="m12")
-    m13 = canvas.create_rectangle(200,190,250,240, outline="white", tag="m13")
+    m00 = canvas.create_rectangle(160,10,220,70, outline="black", width=5, tag="m00")
+    m01 = canvas.create_rectangle(160,80,220,140, outline="black", width=5, tag="m01")
+    m02 = canvas.create_rectangle(160,150,220,210, outline="black", width=5, tag="m02")
+    m03 = canvas.create_rectangle(160,220,220,280, outline="black", width=5, tag="m03")
+    m10 = canvas.create_rectangle(230,10,290,70, outline="black", width=5, tag="m10")
+    m11 = canvas.create_rectangle(230,80,290,140, outline="black", width=5, tag="m11")
+    m12 = canvas.create_rectangle(230,150,290,210, outline="black", width=5, tag="m12")
+    m13 = canvas.create_rectangle(230,220,290,280, outline="black", width=5, tag="m13")
 
     #   second segments
-    s00 = canvas.create_rectangle(270,10,320,60, outline="white", tag="s00")
-    s01 = canvas.create_rectangle(270,70,320,120, outline="white", tag="s01")
-    s02 = canvas.create_rectangle(270,130,320,180, outline="white", tag="s02")
-    s03 = canvas.create_rectangle(270,190,320,240, outline="white", tag="s03")
-    s10 = canvas.create_rectangle(330,10,380,60, outline="white", tag="s10")
-    s11 = canvas.create_rectangle(330,70,380,120, outline="white", tag="s11")
-    s12 = canvas.create_rectangle(330,130,380,180, outline="white", tag="s12")
-    s13 = canvas.create_rectangle(330,190,380,240, outline="white", tag="s13")
+    s00 = canvas.create_rectangle(310,10,370,70, outline="black", width=5, tag="s00")
+    s01 = canvas.create_rectangle(310,80,370,140, outline="black", width=5, tag="s01")
+    s02 = canvas.create_rectangle(310,150,370,210, outline="black", width=5, tag="s02")
+    s03 = canvas.create_rectangle(310,220,370,280, outline="black", width=5, tag="s03")
+    s10 = canvas.create_rectangle(380,10,440,70, outline="black", width=5, tag="s10")
+    s11 = canvas.create_rectangle(380,80,440,140, outline="black", width=5, tag="s11")
+    s12 = canvas.create_rectangle(380,150,440,210, outline="black", width=5, tag="s12")
+    s13 = canvas.create_rectangle(380,220,440,280, outline="black", width=5, tag="s13")
 
     #   colons
-    colon01 = canvas.create_oval(125, 110, 135, 120, fill="white", outline="white")
-    colon02 = canvas.create_oval(125, 130, 135, 140, fill="white", outline="white")
-    colon11 = canvas.create_oval(255, 110, 265, 120, fill="white", outline="white")
-    colon12 = canvas.create_oval(255, 130, 265, 140, fill="white", outline="white")
+    colon01 = canvas.create_oval(145, 125, 155, 135, fill="white", width=3, outline="black")
+    colon02 = canvas.create_oval(145, 155, 155, 165, fill="white", width=3, outline="black")
+    colon11 = canvas.create_oval(295, 125, 305, 135, fill="white", width=3, outline="black")
+    colon12 = canvas.create_oval(295, 155, 305, 165, fill="white", width=3, outline="black")
 
 #   update each section to be on or off corresponding with each number's binary representation
 def draw_time(canvas, root, time):
@@ -68,7 +68,7 @@ def draw_time(canvas, root, time):
         else:
             first_flag = False
 
-        if i == 0 or i == 1:
+        if i==0 or i==1:
             column_tag = "h"
         elif i==2 or i==3:
             column_tag = "m"
@@ -94,7 +94,7 @@ def draw_time(canvas, root, time):
 def main():
     root = Tk()
     root.title("Binary Clock")
-    c = Canvas(root, bg="grey", height=250, width=390)
+    c = Canvas(root, bg="grey", height=300, width=450)
     create_clock(c, root)
 
     while True:
